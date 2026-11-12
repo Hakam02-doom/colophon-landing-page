@@ -1,0 +1,189 @@
+.section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 var(--gutter);
+}
+
+.sticky {
+  position: sticky;
+  top: 40px;
+  z-index: 1;
+  width: 100%;
+  max-width: 1000px;
+  height: 810px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+/* Soft sky glow peeking from behind the heading */
+.glow {
+  position: absolute;
+  top: -90px;
+  left: -105px;
+  right: -105px;
+  height: 271px;
+  z-index: 0;
+  opacity: 0.34;
+  overflow: hidden;
+  -webkit-mask-image: radial-gradient(60.3947% 62% at 50% 52.2%, #000 0%, rgba(0, 0, 0, 0) 78.4483%);
+  mask-image: radial-gradient(60.3947% 62% at 50% 52.2%, #000 0%, rgba(0, 0, 0, 0) 78.4483%);
+  pointer-events: none;
+}
+.glow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.title {
+  width: max-content;
+  white-space: nowrap;
+}
+.intro {
+  max-width: 290px;
+}
+
+.row {
+  position: relative;
+  width: 100%;
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 12px;
+}
+
+.copyBox {
+  width: 315px;
+  height: 100%;
+  flex-shrink: 0;
+  padding: 24px;
+  border-radius: 12px;
+  background: var(--c-glass);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  overflow: clip;
+  -webkit-mask-image: linear-gradient(#000 81%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(#000 81%, rgba(0, 0, 0, 0) 100%);
+}
+.copyStack {
+  display: grid;
+}
+.step {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  opacity: 0;
+  filter: blur(4px);
+  transform: translateY(8px);
+  transition:
+    opacity 0.5s var(--ease),
+    filter 0.5s var(--ease),
+    transform 0.5s var(--ease);
+  pointer-events: none;
+}
+.step[data-active='true'] {
+  opacity: 1;
+  filter: none;
+  transform: none;
+  pointer-events: auto;
+}
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.screenFrame {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 2px;
+  border-radius: 12px 0 0 12px;
+  background: var(--c-glass-strong);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  overflow: clip;
+  -webkit-mask-image: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #000 43.9655%);
+  mask-image: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #000 43.9655%);
+}
+.screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: clip;
+}
+.screen img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0% 0%;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.5s var(--ease);
+}
+.screen img[data-active='true'] {
+  opacity: 1;
+}
+
+.trigger {
+  width: 100%;
+  height: 150px;
+  pointer-events: none;
+}
+
+/* Tablet */
+@media (max-width: 1199px) {
+  .copyBox {
+    width: 227px;
+    padding: 16px;
+  }
+}
+
+/* Phone: screenshot on top, copy card underneath */
+@media (max-width: 809px) {
+  .glow {
+    top: 14px;
+    left: -87.5px;
+    right: -87.5px;
+  }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .row {
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+  }
+  .screenFrame {
+    order: -1;
+    width: 100%;
+    flex: 1 1 0;
+    min-height: 0;
+  }
+  .copyBox {
+    width: 100%;
+    height: 178px;
+    flex: none;
+  }
+}

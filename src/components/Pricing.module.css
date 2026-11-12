@@ -1,0 +1,159 @@
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px var(--gutter) 0;
+  overflow: clip;
+}
+.inner {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.plansWrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Monthly / Yearly switch */
+.toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  height: 32px;
+  border-radius: 100px;
+  background: var(--c-dark);
+  overflow: clip;
+}
+.fill {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  border-radius: 41px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  transition:
+    left 0.4s cubic-bezier(0.3, 0.9, 0.3, 1),
+    width 0.4s cubic-bezier(0.3, 0.9, 0.3, 1);
+}
+.pill {
+  position: relative;
+  height: 24px;
+  padding: 2px 12px;
+  border-radius: 41px;
+  color: var(--c-text);
+  transition: color 0.3s var(--ease);
+}
+.pill[data-active='true'] {
+  color: var(--c-bg);
+}
+
+.cards {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+}
+.card {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--c-glass);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  overflow: clip;
+  -webkit-mask-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000 19%);
+  mask-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000 19%);
+}
+.cardHead {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+.details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.price {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.featureBox {
+  position: relative;
+  width: 100%;
+  display: flex;
+  padding: 12px 12px 60px;
+  border-radius: 10px;
+  overflow: clip;
+}
+.featureBg {
+  z-index: 0;
+  filter: brightness(0.74) contrast(1.29);
+}
+.features {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.note {
+  color: var(--c-text);
+  text-align: center;
+}
+
+@media (max-width: 809px) {
+  .heading p {
+    max-width: 240px;
+  }
+  .cards {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .card {
+    flex: none;
+  }
+}

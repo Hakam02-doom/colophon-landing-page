@@ -1,0 +1,132 @@
+.hero {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: clip;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+.bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(7, 7, 7, 0) 0%, #070707 100%);
+  -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 0) 0%, #000 95%);
+  mask-image: linear-gradient(rgba(0, 0, 0, 0) 0%, #000 95%);
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+.headingBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.sub {
+  max-width: 300px;
+}
+.buttons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.trusted {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+.trustedInner {
+  width: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.ticker {
+  width: 440px;
+  height: 20px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #000 10%, #000 90%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #000 10%, #000 90%, rgba(0, 0, 0, 0) 100%);
+}
+.track {
+  display: flex;
+  width: max-content;
+  gap: 32px;
+  /* one row = 684px of logos + 6 gaps of 32px = 876px; at 30px/s that is ~29.2s */
+  animation: ticker 29.2s linear infinite;
+}
+.tickerRow {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+@keyframes ticker {
+  from {
+    transform: translateX(-32px);
+  }
+  to {
+    transform: translateX(calc(-32px - 876px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}
+
+/* Tablet: the source offsets the hero content with a 32px left pad */
+@media (max-width: 1199px) {
+  .hero {
+    padding-left: 32px;
+  }
+}
+@media (max-width: 809px) {
+  .hero {
+    padding: 0 20px;
+  }
+  .content {
+    width: 100%;
+  }
+  .trustedInner {
+    width: 100%;
+    align-items: flex-start;
+  }
+  .trustedInner > p {
+    width: 100%;
+  }
+}
