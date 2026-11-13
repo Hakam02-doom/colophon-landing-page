@@ -9,25 +9,25 @@ const steps: Step[] = [
     badge: '01  Write',
     title: 'Saved edits stay saved.',
     body: 'Kill it at any moment and lose nothing. Locales, mirrored references, import and export, and the type builder all sit on that editing core.',
-    screen: '/images/screen-1.png',
+    screen: '/images/screen-1.webp',
   },
   {
     badge: '02  Review',
     title: 'Review gates every release.',
     body: 'Named review stages gate publishing, in order, per environment. Comments pin to the exact revision they were written on, so a note always points at the text it was about.',
-    screen: '/images/screen-2.png',
+    screen: '/images/screen-2.webp',
   },
   {
     badge: '03  Publish',
     title: 'Each publish is a numbered release.',
     body: 'Every publish becomes a numbered release with a record of exactly what went live. No publish happens twice, and no reader sees half of one.',
-    screen: '/images/screen-3.png',
+    screen: '/images/screen-3.webp',
   },
   {
     badge: '04 Prove',
     title: 'Published means it was seen.',
     body: "The site update shows as pending until it's actually seen. Step back through any release with a slider; rolling back is just a new, reviewed release.",
-    screen: '/images/screen-4.png',
+    screen: '/images/screen-4.webp',
   },
 ]
 

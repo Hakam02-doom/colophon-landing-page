@@ -72,13 +72,14 @@
   --font-sans: 'Inter Display', 'Inter Display Placeholder', sans-serif;
   --font-mono: 'Intel One Mono', monospace;
 
-  --c-bg: #070707;
+  /* Palette: black is primary, white is secondary. Greys are tints of the two. */
+  --c-bg: #000000;
   --c-white: #ffffff;
   --c-text: #e8e8e8;
   --c-muted: rgba(255, 255, 255, 0.4);
   --c-dark: #111111;
-  --c-accent: #ff6600;
-  --c-accent-soft: rgba(255, 102, 0, 0.12);
+  --c-accent: #ffffff;
+  --c-accent-soft: rgba(255, 255, 255, 0.12);
   --c-glass: rgba(255, 255, 255, 0.06);
   --c-glass-strong: rgba(255, 255, 255, 0.12);
   --c-line: rgba(255, 255, 255, 0.12);

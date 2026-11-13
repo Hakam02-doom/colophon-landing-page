@@ -86,7 +86,7 @@
     height: 24px;
   }
   .nav[data-open='true'] {
-    background: rgba(7, 7, 7, 0.85);
+    background: rgba(0, 0, 0, 0.85);
   }
   .mobileMenu:not([hidden]) {
     width: 100%;

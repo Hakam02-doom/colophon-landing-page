@@ -72,7 +72,7 @@ export function FAQ() {
               >
                 {isOpen && (
                   <span className={`cover ${styles.answerBg}`} aria-hidden="true">
-                    <img src="/images/faq-answer.png" alt="" />
+                    <img src="/images/faq-answer.jpg" alt="" />
                   </span>
                 )}
                 <span className={styles.text}>

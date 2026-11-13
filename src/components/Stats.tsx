@@ -47,7 +47,7 @@ export function Stats() {
 
           <div className={styles.highlights}>
             <div className={`cover ${styles.highlightsBg}`}>
-              <img src="/images/testimonial.png" alt="" loading="lazy" />
+              <img src="/images/testimonial.jpg" alt="" loading="lazy" />
             </div>
             {highlights.map((h) => (
               <div key={h.label} className={styles.highlight}>

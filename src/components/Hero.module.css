@@ -11,6 +11,17 @@
   overflow: clip;
 }
 
+/* Soft scrim so white text stays readable on the pale Dawn sky:
+   a faint glow behind the hero copy and a light shade under the nav. */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 34% 26% at 50% 50%, rgba(0, 0, 0, 0.34) 0%, rgba(0, 0, 0, 0) 100%),
+    linear-gradient(rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0) 14%);
+  pointer-events: none;
+}
 .bg {
   position: absolute;
   inset: 0;
@@ -27,7 +38,7 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(7, 7, 7, 0) 0%, #070707 100%);
+  background: linear-gradient(rgba(0, 0, 0, 0) 0%, var(--c-bg) 100%);
   -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 0) 0%, #000 95%);
   mask-image: linear-gradient(rgba(0, 0, 0, 0) 0%, #000 95%);
   pointer-events: none;

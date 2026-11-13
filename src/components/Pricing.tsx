@@ -36,7 +36,7 @@ const stages: Stage[] = [
     value: { phase: 'P5', proof: '0' },
     unit: { phase: '/ closed', proof: '/ unauthorized actions' },
     description: 'Scripts and AI agents get safe, limited access to every capability.',
-    image: '/images/pricing-pro.png',
+    image: '/images/pricing-pro.jpg',
     imageOpacity: 0.6,
     featured: true,
     features: [
